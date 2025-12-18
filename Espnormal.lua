@@ -7,7 +7,7 @@ local ESPObjects = {}
 
 -- Настройки ESP
 local ESPSettings = {
-    Enabled = true,
+    Enabled = false,
     BoxColor = Color3.fromRGB(255, 50, 50),
     BoxOutlineColor = Color3.fromRGB(0, 0, 0),
     TextColor = Color3.fromRGB(255, 255, 255),
