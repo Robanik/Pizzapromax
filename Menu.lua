@@ -423,5 +423,5 @@ local EspTab = CreateTab("Esp")
 --=================================--
 
 CreateButton(EspTab, "esp def | on/off", function()
-G.ToggleESP()
+_G.ToggleESP()
 end)
