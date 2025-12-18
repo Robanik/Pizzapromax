@@ -310,8 +310,16 @@ local function initESP()
 end
 
 -- Главный цикл
-RunService.RenderStepped:Connect(function()
-    if not ESPSettings.Enabled then return end
+local renderConnection
+renderConnection = RunService.RenderStepped:Connect(function()
+    if not ESPSettings.Enabled then 
+        for rig, esp in pairs(ESPObjects) do
+            for _, drawing in pairs(esp) do
+                if drawing then drawing.Visible = false end
+            end
+        end
+        return 
+    end
     
     if ESPSettings.RainbowMode then
         rainbowHue = (rainbowHue + 0.001) % 1
